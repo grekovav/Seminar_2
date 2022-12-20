@@ -3,23 +3,15 @@
 
 Console.Clear();
 
-int FindThirdDigit(int num)
+Console.Write("Введите целое число: ");
+int number = int.Parse(Console.ReadLine()!);
+
+if (number > 99)
 {
-	int result;
-	if(num > 99)
-   {
-		int ed = num % 10;
-    }
-	result = ed;
+    int Third = (number / 100) % 10;
+    Console.WriteLine($"Третья цифра: {Third}");
 }
-
-Console.Write("Input a two-digit number: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-int thirdDigit = FindThirdDigit(number);
-Console.WriteLine($"Third Digit of {number} is {thirdDigit}");
-
-int n = int.Parse(Console.ReadLine());
-int k = (int)Math.Log10(n)-2;
-Console.WriteLine(k < 0 ? "No such digit" : (n % (int)Math.Pow(10, k + 1) / (int)Math.Pow(10, k)).ToString());
-Console.ReadLine();
+else
+{
+    Console.WriteLine("Третьей цифры нет");
+}
