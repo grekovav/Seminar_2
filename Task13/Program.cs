@@ -4,14 +4,6 @@
 Console.Clear();
 
 Console.Write("Введите целое число: ");
-int number = int.Parse(Console.ReadLine()!);
-
-if (number > 99)
-{
-    int Third = (number / 100) % 10;
-    Console.WriteLine($"Третья цифра: {Third}");
-}
-else
-{
-    Console.WriteLine("Третьей цифры нет");
-}
+int n = int.Parse(Console.ReadLine()!);
+int k = (int)Math.Log10(n)-2;
+Console.WriteLine(k < 0 ? "Третьей цифры нет" : (n % (int)Math.Pow(10, k + 1) / (int)Math.Pow(10, k)).ToString());
